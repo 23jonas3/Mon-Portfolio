@@ -1,0 +1,362 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #111;
+    z-index: 10;
+}
+
+
+/* LOGO */
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+/* MENU */
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.menu a:hover {
+    opacity: 0.5;
+}
+    
+
+
+
+/* LIENS */
+
+.menu a {
+    position: relative;
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 13px;
+    letter-spacing: 1px;
+
+    padding: 5px 0;
+}
+
+
+/* PETITE LIGNE SOUS LE LIEN */
+
+.menu a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: white;
+
+    transition: width 0.3s ease;
+}
+
+
+/* SURVOL */
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+    padding: 180px 40px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero small {
+    font-size: 14px;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-size: 15vw;
+    line-height: 0.8;
+    margin: 30px 0;
+    letter-spacing: -8px;
+}
+
+.hero p {
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    padding: 120px 40px;
+}
+
+h2 {
+    font-size: 60px;
+    margin-bottom: 50px;
+}
+
+
+/* =========================
+   À PROPOS
+========================= */
+
+.about {
+    max-width: 800px;
+}
+
+.about p {
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   COMPÉTENCES
+========================= */
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.skill {
+    border: 1px solid #555;
+    padding: 30px;
+    font-size: 25px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.skill:hover {
+    transform: translateY(-8px);
+    border-color: white;
+    background: #1a1a1a;
+}
+
+.skill strong {
+    position: relative;
+    display: inline-block;
+}
+
+.skill strong::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+.skill:hover strong::after {
+    width: 100%;
+}
+
+
+/* =========================
+   PROJETS
+========================= */
+
+#projects {
+    padding: 120px 40px;
+}
+
+#projects > h2 {
+    font-size: 60px;
+    margin-bottom: 50px;
+}
+
+#projects > .projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+
+/* CARTES */
+
+.project {
+    border: 1px solid #444;
+    background: #151515;
+    overflow: hidden;
+    transition: transform 0.35s ease, border-color 0.35s ease;
+}
+
+
+/* IMAGES */
+
+.project img {
+    width: 100%;
+    height: 320px;
+    object-fit: contain;
+    display: block;
+    background: #181818;
+    padding: 20px;
+    transition: transform 0.5s ease;
+}
+
+
+/* TEXTES DES PROJETS */
+
+.project small {
+    display: block;
+    margin: 25px 30px 8px;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.project h3 {
+    margin: 0 30px;
+    font-size: 32px;
+}
+
+.project p {
+    margin: 8px 30px 30px;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+
+/* HOVER */
+
+.project:hover {
+    transform: translateY(-6px);
+    border-color: white;
+}
+
+.project:hover img {
+    transform: scale(1.03);
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    min-height: 70vh;
+}
+
+.contact p {
+    font-size: 25px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 30px 40px;
+    border-top: 1px solid #333;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    nav {
+        padding: 20px;
+    }
+
+    nav a {
+        margin-left: 10px;
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 150px 20px 50px;
+    }
+
+    .hero h1 {
+        font-size: 20vw;
+        letter-spacing: -4px;
+    }
+
+    section {
+        padding: 80px 20px;
+    }
+
+    h2 {
+        font-size: 45px;
+    }
+
+    .skills,
+    #projects > .projects {
+        grid-template-columns: 1fr;
+    }
+
+    #projects {
+        padding: 80px 20px;
+    }
+
+    #projects > h2 {
+        font-size: 45px;
+    }
+
+    .project img {
+        height: 250px;
+    }
+}
+a,
+a:visited {
+    color: white;
+}
